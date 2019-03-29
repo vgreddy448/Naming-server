@@ -9,8 +9,9 @@ import javax.persistence.Id;
 @Entity
 public class Players {
 
+	@Id
 	@Column(name="playerId")
-	int playerId;
+	Long playerId;
 	@Column(name="player_Team")
 	String playerTeam;
 	@Column(name="player_Name")
@@ -33,10 +34,10 @@ public class Players {
 	public Players(){
 		
 	}
-	public int getPlayerId() {
+	public Long getPlayerId() {
 		return this.playerId;
 	}
-	public void setPlayerId(int playerId) {
+	public void setPlayerId(Long playerId) {
 		this.playerId = playerId;
 	}
 	public String getPlayerTeam() {

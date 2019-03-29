@@ -4,8 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.cricket.fantasy.players.Players;
 
 
-public interface PlayersRepository extends JpaRepository<Players, String>{
+public interface PlayersRepository extends JpaRepository<Players, Long>{
 	
-	Players findByTeamAndName(String playerTeam, String playerName);
+	Players findByPlayerTeamAndPlayerName(String playerTeam, String playerName);
 
 }

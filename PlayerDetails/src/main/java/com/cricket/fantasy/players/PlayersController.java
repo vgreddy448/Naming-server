@@ -26,7 +26,7 @@ public class PlayersController {
 		(@PathVariable String team, @PathVariable String name){
 		
 		Players players = 
-				repository.findByTeamAndName(team, name);
+				repository.findByPlayerTeamAndPlayerName(team, name);
 		
 		//players.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
 		
