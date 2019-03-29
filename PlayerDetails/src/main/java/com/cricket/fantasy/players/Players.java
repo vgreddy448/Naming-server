@@ -2,20 +2,37 @@ package com.cricket.fantasy.players;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Players {
 
+	@Column(name="playerId")
 	int playerId;
+	@Column(name="player_Team")
 	String playerTeam;
+	@Column(name="player_Name")
 	String playerName;
+	@Column(name="player_Country")
 	String playerCountry;
+	@Column(name="player_DOB")
 	Date playerDOB;
+	@Column(name="player_Role")
 	String playerRole;
+	@Column(name="player_BattingStyle")
 	String playerBattingStyle;
+	@Column(name="player_BowlingStyle")
 	String playerBowlingStyle;
+	@Column(name="player_Height")
 	String playerHeight;
+	@Column(name="player_AuctionPrice")
 	String playerAuctionPrice;
 	
-	
+	public Players(){
+		
+	}
 	public int getPlayerId() {
 		return this.playerId;
 	}
