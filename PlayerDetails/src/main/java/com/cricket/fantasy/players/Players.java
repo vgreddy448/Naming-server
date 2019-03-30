@@ -10,25 +10,25 @@ import javax.persistence.Id;
 public class Players {
 
 	@Id
-	@Column(name="playerId")
+	@Column(name="PLAYER_ID")
 	Long playerId;
-	@Column(name="player_Team")
+	@Column(name="PLAYER_TEAM")
 	String playerTeam;
-	@Column(name="player_Name")
+	@Column(name="PLAYER_NAME")
 	String playerName;
-	@Column(name="player_Country")
+	@Column(name="PLAYER_COUNTRY")
 	String playerCountry;
-	@Column(name="player_DOB")
+	@Column(name="PLAYER_DOB")
 	Date playerDOB;
-	@Column(name="player_Role")
+	@Column(name="PLAYER_ROLE")
 	String playerRole;
-	@Column(name="player_BattingStyle")
+	@Column(name="PLAYER_BATTINGSTYLE")
 	String playerBattingStyle;
-	@Column(name="player_BowlingStyle")
+	@Column(name="PLAYER_BOWLINGSTYLE")
 	String playerBowlingStyle;
-	@Column(name="player_Height")
+	@Column(name="PLAYER_HEIGHT")
 	String playerHeight;
-	@Column(name="player_AuctionPrice")
+	@Column(name="PLAYER_AUCTIONPRICE")
 	String playerAuctionPrice;
 	
 	public Players(){

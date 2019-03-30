@@ -1,12 +1,12 @@
-insert into players (playerId,player_Team,player_Name,player_Country,player_DOB,player_Role,
-player_BattingStyle,player_BowlingStyle,player_Height,player_AuctionPrice)
-values(10001,'SRH','David Warner','AUS','10/27/1986','Batsman',
+insert into PLAYERS (PLAYER_ID,PLAYER_TEAM,PLAYER_NAME,PLAYER_COUNTRY,PLAYER_DOB,PLAYER_ROLE,
+PLAYER_BATTINGSTYLE,PLAYER_BOWLINGSTYLE,PLAYER_HEIGHT,PLAYER_AUCTIONPRICE)
+values(10001,'SRH','David Warner','AUS','1986-10-27','Batsman' ,
 'Left-Handed Bat','Right-Arm Bowl','170m','Retained');
-insert into players(playerId,player_Team,player_Name,player_Country,player_DOB,player_Role,
-player_BattingStyle,player_BowlingStyle,player_Height,player_AuctionPrice)
-values(10001,'RCB','Virat Kohli','IND','11/05/1988','Batsman',
+insert into PLAYERS(PLAYER_Id,PLAYER_TEAM,PLAYER_NAME,PLAYER_COUNTRY,PLAYER_DOB,PLAYER_ROLE,
+PLAYER_BATTINGSTYLE,PLAYER_BOWLINGSTYLE,PLAYER_HEIGHT,PLAYER_AUCTIONPRICE)
+values(10002,'RCB','Virat Kohli','IND','1988-11-05','Batsman' ,
 'Right-Handed Bat','Right-Arm Medium Pace','172m','Retained');
-insert into players(playerId,player_Team,player_Name,player_Country,player_DOB,player_Role,
-player_BattingStyle,player_BowlingStyle,player_Height,player_AuctionPrice)
-values(10001,'Not Sold In Auction','Joe Root','ENG','12/30/1990','Batsman',
+insert into PLAYERS(PLAYER_Id,PLAYER_TEAM,PLAYER_NAME,PLAYER_COUNTRY,PLAYER_DOB,PLAYER_ROLE,
+PLAYER_BATTINGSTYLE,PLAYER_BOWLINGSTYLE,PLAYER_HEIGHT,PLAYER_AUCTIONPRICE)
+values(10003,'Not Sold In Auction','Joe Root','ENG','1990-12-30','Batsman',
 'Right-Handed Bat','Right-Arm Bowl','174m','Retained');
