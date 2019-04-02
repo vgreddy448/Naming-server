@@ -19,12 +19,14 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 	@GetMapping("/currency-converter/from/{from}/to/{to}/quantity/{quantity}")
 	public TeamDetails convertCurrency(@PathVariable String from, @PathVariable String to,
 			@PathVariable BigDecimal quantity) {
+				return null;
 		
 	}
 	
 	@GetMapping("/currency-converter/from/{from}/to/{to}/quantity/{quantity}")
-	public TeamDetails convertCurrency(@PathVariable String from, @PathVariable String to,
+	public TeamDetails convertCurrencyFeign(@PathVariable String from, @PathVariable String to,
 			@PathVariable BigDecimal quantity) {
+				return null;
 		
 	}
 
