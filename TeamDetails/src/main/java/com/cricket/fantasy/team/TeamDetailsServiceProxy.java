@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RibbonClient(name="player-details-service")
 public interface TeamDetailsServiceProxy {
 	
-	@GetMapping("/player-details-service/player-details/Player_Team/{Player_Team}/Player_Name/{Player_Name}")
+	@GetMapping("/player-details-service/player-details/player_Team/{player_Team}/player_Name/{player_Name}")
 	public TeamDetails retrievePlayerDetails
-	(@PathVariable("PlayerTeam") String PlayerTeam, @PathVariable("PlayerName") String PlayerName);
+	(@PathVariable("playerTeam") String playerTeam, @PathVariable("playerName") String playerName);
 
 }
