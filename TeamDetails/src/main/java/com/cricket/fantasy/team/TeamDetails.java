@@ -1,5 +1,7 @@
 package com.cricket.fantasy.team;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 
@@ -91,5 +93,12 @@ public class TeamDetails {
 		this.teamVenue = teamVenue;
 	}
 
+	public TeamDetails(Long teamId, String teamName, String teamCaptain) {
+		super();
+		this.teamId = teamId;
+		this.teamName = teamName;
+		this.teamCaptain = teamCaptain;
+		
+	}
 	
 }
