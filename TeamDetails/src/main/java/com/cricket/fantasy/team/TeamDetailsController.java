@@ -18,18 +18,17 @@ public class TeamDetailsController {
 private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-	TeamDetailsServiceProxy proxy;
+	private TeamDetailsServiceProxy proxy;
 	
-	@GetMapping("/player-details/player_Team/{player_Team}/player_Name/{player_Name}")
-	public TeamDetails convertCurrency(@PathVariable String playerTeam, @PathVariable String playerName) {
+	@GetMapping("/team-details/team_Name/{team_Name}/team_Captain/{team_Captain}")
+	public TeamDetails convertCurrency(@PathVariable String teamName, @PathVariable String teamCaptain) {
 		
 		Map<String, String> uriVariables = new HashMap<>();
-		uriVariables.put("playerTeam", playerTeam);
-		uriVariables.put("playerName", playerName);
+		uriVariables.put("playerTeam", teamName);
+		uriVariables.put("playerName", teamCaptain);
 		ResponseEntity<TeamDetails> responseEntity = new RestTemplate().getForEntity(
-				"http://localhost:8000/currency-exchange/from/{from}/to/{to}", TeamDetails.class,
+				"http://localhost:8001/player-details/player_Team/{player_Team}/player_Name/{player_Name}", TeamDetails.class,
 				uriVariables);
-
 		TeamDetails response = responseEntity.getBody();
 
 		return new TeamDetails(response.teamId, 
@@ -38,7 +37,7 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 		
 	}
 	
-	@GetMapping("/player-details-feign/player_Team/{player_Team}/player_Name/{player_Name}")
+	@GetMapping("/team-details-feign/team_Name/{team_Name}/team_Captain/{team_Captain}")
 	public TeamDetails convertCurrencyFeign(@PathVariable String playerTeam, @PathVariable String playerName) {
 		TeamDetails response = proxy.retrievePlayerDetails(playerTeam, playerName);
 		logger.info("{}", response);
