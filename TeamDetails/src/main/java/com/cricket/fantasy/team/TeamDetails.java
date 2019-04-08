@@ -1,10 +1,10 @@
 package com.cricket.fantasy.team;
 
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class TeamDetails {
 	
 	@Id
@@ -14,7 +14,7 @@ public class TeamDetails {
 	String teamName;
 	@Column(name="TEAM_COUNTRY")
 	String teamCountry;
-	@Column(name="TEAM_COUNTRY")
+	@Column(name="TEAM_LASTYEARPOSITION")
 	Long teamLastYearPosition;
 	@Column(name="TEAM_OWNER")
 	String teamOwner;
