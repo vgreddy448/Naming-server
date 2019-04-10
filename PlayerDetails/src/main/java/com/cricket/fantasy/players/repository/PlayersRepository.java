@@ -6,6 +6,6 @@ import com.cricket.fantasy.players.Players;
 
 public interface PlayersRepository extends JpaRepository<Players, Long>{
 	
-	Players findByPlayerTeamAndPlayerName(String playerTeam, String playerName);
+	Players findByPlayerTeamAndPlayerName(String player_Team, String player_Name);
 
 }

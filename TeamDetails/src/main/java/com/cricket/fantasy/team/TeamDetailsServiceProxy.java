@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
-@FeignClient(name="netflix-zuul-api-gateway-server")
+@FeignClient(name="player-details-service")
 @RibbonClient(name="player-details-service")
 public interface TeamDetailsServiceProxy {
 	
-	@GetMapping("/player-details-service/player-details/player_Team/{player_Team}/player_Name/{player_Name}")
-	public TeamDetails retrieveTeamDetails(@PathVariable("playerTeam") String playerTeam,
-			@PathVariable("playerName") String playerName);
+	//@GetMapping("/player-details-service/fantasy/player-details/player_Team/{player_Team}/player_Name/{player_Name}")
+	@GetMapping("/fantasy/team-details/teamName/{teamName}/teamCaptain/{teamCaptain}")
+	public TeamDetails retrieveTeamDetails(@PathVariable("teamName") String team_Name,
+			@PathVariable("teamCaptain") String team_Captain);
 
 	
 	/*TeamDetails findByTeamNameAndTeamCaptain(String teamName, String teamCaptain);*/

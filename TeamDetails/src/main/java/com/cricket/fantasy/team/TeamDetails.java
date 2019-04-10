@@ -24,6 +24,10 @@ public class TeamDetails {
 	String teamCaptain;
 	@Column(name="TEAM_VENUE")
 	String teamVenue;
+	@Column(name="PLAYER_TEAM")
+	String playerTeam;
+	@Column(name="PLAYER_NAME")
+	String playerName;
 	
 	public TeamDetails(){
 		
@@ -92,12 +96,28 @@ public class TeamDetails {
 	public void setTeamVenue(String teamVenue) {
 		this.teamVenue = teamVenue;
 	}
+	
+	public String getPlayerTeam() {
+		return this.playerTeam;
+	}
 
-	public TeamDetails(Long teamId, String teamName, String teamCaptain) {
+	public void setPlayerTeam(String playerTeam) {
+		this.playerTeam = playerTeam;
+	}
+
+	public String getPlayerName() {
+		return this.playerName;
+	}
+
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
+
+	public TeamDetails(Long teamId, String playerTeam, String playerName) {
 		super();
 		this.teamId = teamId;
-		this.teamName = teamName;
-		this.teamCaptain = teamCaptain;
+		this.playerTeam = playerTeam;
+		this.playerName = playerName;
 		
 	}
 	

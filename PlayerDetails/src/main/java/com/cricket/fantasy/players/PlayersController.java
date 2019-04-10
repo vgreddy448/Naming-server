@@ -21,12 +21,12 @@ public class PlayersController {
 	@Autowired
 	private PlayersRepository repository;
 	
-	@GetMapping("/player-details/player_Team/{team}/player_Name/{name}")
+	@GetMapping("/fantasy/player-details/player_Team/{player_Team}/player_Name/{player_Name}")
 	public Players retrieveExchangeValue
-		(@PathVariable String team, @PathVariable String name){
+		(@PathVariable String player_Team, @PathVariable String player_Name){
 		
 		Players players = 
-				repository.findByPlayerTeamAndPlayerName(team, name);
+				repository.findByPlayerTeamAndPlayerName(player_Team, player_Name);
 		
 		//players.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
 		
