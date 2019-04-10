@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface TeamDetailsServiceProxy {
 	
 	//@GetMapping("/player-details-service/fantasy/player-details/player_Team/{player_Team}/player_Name/{player_Name}")
-	@GetMapping("/fantasy/team-details/teamName/{teamName}/teamCaptain/{teamCaptain}")
-	public TeamDetails retrieveTeamDetails(@PathVariable("teamName") String team_Name,
-			@PathVariable("teamCaptain") String team_Captain);
+	@GetMapping("/fantasy/player-details/player_Team/{player_Team}/player_Name/{player_Name}")
+	public TeamDetails retrieveTeamDetails(@PathVariable("player_Team") String team_Name,
+			@PathVariable("player_Name") String team_Captain);
 
 	
 	/*TeamDetails findByTeamNameAndTeamCaptain(String teamName, String teamCaptain);*/
