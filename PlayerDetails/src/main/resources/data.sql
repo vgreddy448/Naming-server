@@ -14,3 +14,14 @@ insert into PLAYERS(PLAYER_Id,PLAYER_TEAM,PLAYER_NAME,PLAYER_COUNTRY,PLAYER_DOB,
 PLAYER_BATTINGSTYLE,PLAYER_BOWLINGSTYLE,PLAYER_HEIGHT,PLAYER_AUCTIONPRICE)
 values(10004,'SRH','Alex Hales','ENG','1990-12-31','Batsman',
 'Right-Handed Bat','Right-Arm Offbreak','181m','Auction');
+
+
+CREATE TABLE users(
+   id INT PRIMARY KEY     NOT NULL,
+   enabled INT NOT NULL,
+   password TEXT    NOT NULL,
+   username  TEXT    NOT NULL,
+   role TEXT    NOT NULL
+);
+
+INSERT INTO users VALUES (1,1,'$2a$10$iFolDdAquu/qSclfNDiBK.GFpO0gUBAsCilygHuCy6pUWVd.4ZK8G', 'admin','ADMIN');
