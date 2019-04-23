@@ -22,7 +22,7 @@ import com.cricket.fantasy.players.PlayersController;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	PlayersController userDetailsService;
+	UserDetailsService userDetailsService;
 	
 	
 	@Override
@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public DaoAuthenticationProvider authenticationProvider() {
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
 		provider.setPasswordEncoder( bCryptPasswordEncoder() );
-		provider.setUserDetailsService((UserDetailsService) userDetailsService);
+		provider.setUserDetailsService(userDetailsService);
 		return provider;
 	}
 
@@ -54,5 +54,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.authenticationProvider(authenticationProvider());
+	}
+	
+	@Bean
+	public UserDetailsService userDetailsService() {
+	    return super.userDetailsService();
 	}
 }

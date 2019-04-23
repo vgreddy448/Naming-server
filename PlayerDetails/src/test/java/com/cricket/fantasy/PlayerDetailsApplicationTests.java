@@ -1,4 +1,4 @@
-package com.cricket.fantasy;
+/*package com.cricket.fantasy;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,3 +14,4 @@ public class PlayerDetailsApplicationTests {
 	}
 
 }
+*/

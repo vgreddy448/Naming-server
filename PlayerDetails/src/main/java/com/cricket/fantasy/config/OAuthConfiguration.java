@@ -60,4 +60,5 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
 		converter.setSigningKey("123");
 		return converter;
 	}
+	
 }
