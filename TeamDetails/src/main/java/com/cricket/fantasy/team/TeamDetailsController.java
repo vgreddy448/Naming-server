@@ -28,18 +28,35 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private TeamRepository repository;
 	
+	@Autowired
+	QueueProducer queue;
+	
+	
 	@GetMapping("/fantasy/team-details/team_Name/{team_Name}/team_Captain/{team_Captain}")
 	public TeamDetails getTeamDetails(@PathVariable String team_Name, @PathVariable String team_Captain) {
 		
 		Map<String, String> uriVariables = new HashMap<>();
-		uriVariables.put("teamName", team_Name);
-		uriVariables.put("teamCaptain", team_Captain);
-		ResponseEntity<TeamDetails> responseEntity = new RestTemplate().getForEntity(
-				"http://localhost:8001/fantasy/player-details/player_Team/{teamName}/player_Name/{teamCaptain}", TeamDetails.class,
-				uriVariables);
-		TeamDetails response = responseEntity.getBody();
-		TeamDetails responseQ = repository.findByPlayerTeamAndPlayerName(response.getPlayerTeam(), response.getPlayerName());
-
+		TeamDetails req = new TeamDetails();
+		req.setPlayerName(team_Captain);
+		req.setPlayerTeam(team_Name);
+		req.setTeamCaptain(team_Captain);
+		req.setTeamName(team_Name);
+		
+		/*
+		 * uriVariables.put("teamName", team_Name); uriVariables.put("teamCaptain",
+		 * team_Captain); ResponseEntity<TeamDetails> responseEntity = new
+		 * RestTemplate().getForEntity(
+		 * "http://localhost:8001/fantasy/player-details/player_Team/{teamName}/player_Name/{teamCaptain}",
+		 * TeamDetails.class, uriVariables); TeamDetails response =
+		 * responseEntity.getBody();
+		 */
+		try {
+			queue.produce(req);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		TeamDetails responseQ = repository.findByPlayerTeamAndPlayerName(req.getPlayerTeam(), req.getPlayerName());
 		//return new TeamDetails(responseQ.getTeamId(),responseQ.getPlayerName(), responseQ.getPlayerTeam());
 		return	responseQ;
 		
