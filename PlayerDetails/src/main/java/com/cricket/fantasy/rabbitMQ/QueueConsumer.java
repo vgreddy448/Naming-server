@@ -43,4 +43,5 @@ public class QueueConsumer {
 			logger.error(e.getMessage());
 		}
 	}
+
 }
