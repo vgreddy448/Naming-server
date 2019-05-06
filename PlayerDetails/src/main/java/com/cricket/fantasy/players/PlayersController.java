@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cricket.fantasy.players.repository.PlayersRepository;
-import com.cricket.fantasy.rabbitMQ.QueueConsumer;
+//import com.cricket.fantasy.rabbitMQ.QueueConsumer;
 
 @RestController
 public class PlayersController {
@@ -22,8 +22,8 @@ public class PlayersController {
 	@Autowired
 	private PlayersRepository repository;
 	
-	@Autowired
-	QueueConsumer queue;
+	//@Autowired
+	//QueueConsumer queue;
 	
 	@GetMapping("/fantasy/player-details/player_Team/{player_Team}/player_Name/{player_Name}")
 	public Players retrieveExchangeValue
@@ -34,12 +34,14 @@ public class PlayersController {
 		Players players = 
 				repository.findByPlayerTeamAndPlayerName(player_Team, player_Name);
 		
+		System.out.println("player details"+player_Team +" player_Name"+player_Name);
+		
 		//players.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
 		
 		logger.info("{}", players);
 		
 			  try {
-				queue.receiveMessage(players.getPlayerName());
+				//queue.receiveMessage(players.getPlayerName());
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

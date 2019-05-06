@@ -1,6 +1,6 @@
-package com.cricket.fantasy.rabbitMQ;
+/*package com.cricket.fantasy.rabbitMQ;
 
-/*
+
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.FanoutExchange;
@@ -31,7 +31,7 @@ public class RabbitConfiguration {
 
 
 package com.cricket.fantasy.team;
-*/
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -77,3 +77,4 @@ public class RabbitConfiguration {
  }
 }
 
+*/
