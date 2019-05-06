@@ -9,6 +9,9 @@ http://localhost:8101/fantasy/team-details/team_Name/{team_Name}/team_Captain/{t
 Tomcat App Url
 http://localhost:8080/PlayerDetails-0.0.1-SNAPSHOT/fantasy/player-details/player_Team/SRH/player_Name/David%20Warner
 
+h2-console
+http://localhost:8080/PlayerDetails-0.0.1-SNAPSHOT/h2-console/login.do?jsessionid=a6ee3bafbae12c59fa6a396c9d405f7d
+
 Embedded Tomcat vs Tomcat App Server
 
 Update following in pom.xml 
