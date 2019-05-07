@@ -3,8 +3,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello, Maven'
-                sh 'mvn clean install'
+                rtMavenRun (
+                    tool: maven, // Tool name from Jenkins configuration
+                    pom: 'player-details/pom.xml',
+                    goals: 'clean install'
+                )
             }
         } 
     }
