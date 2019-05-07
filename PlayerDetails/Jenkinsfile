@@ -5,7 +5,7 @@ pipeline {
             steps {
                 rtMavenRun (
                     tool: maven, // Tool name from Jenkins configuration
-                    pom: 'player-details/pom.xml',
+                    pom: 'PlayerDetails/pom.xml',
                     goals: 'clean install'
                 )
             }
