@@ -1,4 +1,4 @@
-/*package com.cricket.fantasy.rabbitMQ;
+package com.cricket.fantasy.rabbitMQ;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class QueueConsumer {
 
 	@Autowired
-	PlayersController mailServiceImpl;
+	PlayersController playersCtrl;
 	
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -34,7 +34,7 @@ public class QueueConsumer {
 	private void processMessage(String message) {
 		try {
 			Players player = new ObjectMapper().readValue(message, Players.class);
-			mailServiceImpl.retrieveExchangeValue(player.getPlayerTeam(), player.getPlayerName());
+			playersCtrl.retrieveExchangeValue(player.getPlayerTeam(), player.getPlayerName());
 		} catch (JsonParseException e) {
 			logger.warn("Bad JSON in message: " + message);
 		} catch (JsonMappingException e) {
@@ -44,4 +44,4 @@ public class QueueConsumer {
 		}
 	}
 
-}*/
+}
