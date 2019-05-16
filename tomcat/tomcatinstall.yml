@@ -27,12 +27,18 @@
         path: /opt/tomcat
         state: directory
         mode: 0755
-    - name: 4. download and unarchive
+    - name: 4. get the package 
+      get_url:
+        url="http://apache.cs.utah.edu/tomcat/tomcat-8/v8.5.40/bin/apache-tomcat-8.5.40.tar.gz"
+        dest="/opt/"
+      register: new_archive
+    - name: 4.1. download and unarchive
       unarchive:
-        src: http://apache.cs.utah.edu/tomcat/tomcat-8/v8.5.40/bin/apache-tomcat-8.5.40.tar.gz
+        src: /opt/apache-tomcat-8.5.40.tar.gz
         dest: /opt/tomcat
-        remote_src: yes
         extra_opts: [--strip-components=1]
+      when: new_archive|changed 
+      
     - name: 5. change ownership
       file:
         path: /opt/tomcat
