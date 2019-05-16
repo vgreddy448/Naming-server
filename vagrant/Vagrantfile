@@ -1,0 +1,14 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/7"
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "JenkinsServer"
+    vb.memory = 2048
+    vb.cpus = 1
+end
+config.vm.hostname = "JenkinsServer"
+config.vm.network :private_network, ip: "192.168.56.10"
+config.vm.provision "ansible_local" do |ansible|
+  ansible.verbose = "v"
+  ansible.playbook = "jenkinsinstall.yml"
+end
+end
